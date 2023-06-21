@@ -50,22 +50,74 @@
 </section>
 <section class="my-section py-5">
   <div class="container">
-    <div class="row">
+    <div class="row py-3">
       <div class="section-heading">
         <h1>About</h1>
       </div>
     </div>
-      <div class="row py-4">
+      <div class="row py-5">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
         <div class="about-text">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p>
+          <p>Hello, I'm Krishan Kant Gautam, a frontend developer with a strong enthusiasm for creating engaging and intuitive digital experiences. With a solid foundation in web development and a keen eye for design, I strive to deliver exceptional user interfaces that seamlessly blend aesthetics and functionality.</p>
         </div>
       </div>
-      <div class="row">
+        <div class="col-md-2"></div>
+      </div>
+      <div class="row py-5">
+        <!-- <div class="col-md-2"></div> -->
+        <div class="col-md-12">
+          <div class="about-content">
+            <h3>Skills</h3>
+            <ul *ngFor="let skill of skills">
+              <li>{{skill}}</li>
+            </ul>
+          </div>
+        </div>
+        <!-- <div class="col-md-5">
+          <div class="img-container">
+          <img src="assets/images/skills.gif" alt="skillsImg" width="100%">
+          </div>
+        </div> -->
+        <!-- <div class="col-md-2"></div> -->
+      </div>
+      <div class="row py-5">
+        <!-- <div class="col-md-1"></div>
+        <div class="col-md-5">
+          <div class="img-container">
+          <img src="assets/images/experience1.gif" alt="experienceImg" width="100%">
+          </div>
+        </div> -->
+        <div class="col-md-12">
+          <div class="about-content">
+            <h3>Experience</h3>
+            <p>I have worked on several frontend development projects, collaborating with cross-functional teams to bring digital concepts to life. Here are some highlights of my experience:</p>
+            <ul *ngFor="let experience of experiences">
+              <li>{{experience}}</li>
+            </ul>
+          </div>
+        </div>
+        <!-- <div class="col-md-1"></div> -->
+      </div>
+      <div class="row py-5">
+        <!-- <div class="col-md-1"></div> -->
+        <div class="col-md-12">
+          <div class="about-content">
+            <h3>Passion and Approach</h3>
+            <p>What truly drives me as a frontend developer is the ability to blend creativity with problem-solving. I am passionate about crafting seamless digital experiences that not only captivate users but also empower them to achieve their goals effortlessly. I take a user-centric approach, striving to understand their needs and preferences, and translating them into intuitive interfaces.</p>
+          </div>
+        </div>
+        <!-- <div class="col-md-5"></div>
+        <div class="col-md-1"></div> -->
+      </div>
+      <div class="row py-5">
         <ng-container *ngFor="let aboutLink of aboutLinks">
           <div class="col-md-3">
             <div class="about-box">
             <div class="outer-sm">
-              <i>E</i>
+              <!-- <i [ngClass]="aboutLink.iconClass"></i> -->
+              <img [src]="getSVGImageUrl(aboutLink.iconClass)" alt="" height="40px" width="40px">
+              <!-- {{aboutLink.iconClass}} -->
             </div>
             <p>{{aboutLink.title}}</p>
             <a href={{aboutLink.link}} target="_blank">{{aboutLink.linkTitle}}</a>
