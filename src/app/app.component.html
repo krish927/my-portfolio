@@ -27,7 +27,7 @@
       </nav>
     </div>
     <div class="row py-5">
-      <div class="col-md-5">
+      <div class="col-md-7">
         <div class="hero-content">
         <h1>Hi, I am <br>Krishan Kant Gautam</h1>
           <p>Frontend Developer</p>
@@ -37,14 +37,29 @@
           </div>
         </div>
       </div>
-      <div class="col-md-1"></div>
-      <div class="col-md-6">
+      <!-- <div class="col-md-1"></div> -->
+      <div class="col-md-5">
         <div class="outer-circle">
           <div class="inner-circle">
             <img src="assets/images/image.png" alt="">
           </div>
         </div>
       </div>
+    </div>
+    <div class="row py-5">
+      <ng-container *ngFor="let aboutLink of aboutLinks">
+        <div class="col-md-3">
+          <div class="about-box">
+          <div class="outer-sm">
+            <!-- <i [ngClass]="aboutLink.iconClass"></i> -->
+            <img [src]="getSVGImageUrl(aboutLink.iconClass)" alt="" height="40px" width="40px">
+            <!-- {{aboutLink.iconClass}} -->
+          </div>
+          <p>{{aboutLink.title}}</p>
+          <a href={{aboutLink.link}} target="_blank">{{aboutLink.linkTitle}}</a>
+        </div>
+        </div>
+      </ng-container>
     </div>
   </div>
 </section>
@@ -65,8 +80,8 @@
         <div class="col-md-2"></div>
       </div>
       <div class="row py-5">
-        <!-- <div class="col-md-2"></div> -->
-        <div class="col-md-12">
+        <div class="row p-4 box-border">
+        <div class="col-md-6">
           <div class="about-content">
             <h3>Skills</h3>
             <ul *ngFor="let skill of skills">
@@ -74,21 +89,24 @@
             </ul>
           </div>
         </div>
-        <!-- <div class="col-md-5">
-          <div class="img-container">
-          <img src="assets/images/skills.gif" alt="skillsImg" width="100%">
-          </div>
-        </div> -->
-        <!-- <div class="col-md-2"></div> -->
-      </div>
-      <div class="row py-5">
-        <!-- <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
         <div class="col-md-5">
           <div class="img-container">
-          <img src="assets/images/experience1.gif" alt="experienceImg" width="100%">
+          <img src="assets/images/skills1.gif" alt="skillsImg" width="100%">
           </div>
-        </div> -->
-        <div class="col-md-12">
+        </div>
+      </div>
+        <!-- <div class="col-md-1"></div> -->
+      </div>
+      <div class="row py-5">
+        <div class="row p-4 box-border">
+        <div class="col-md-5">
+          <div class="img-container">
+            <img src="assets/images/experience1.gif" alt="experienceImg" width="100%">
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-6">
           <div class="about-content">
             <h3>Experience</h3>
             <p>I have worked on several frontend development projects, collaborating with cross-functional teams to bring digital concepts to life. Here are some highlights of my experience:</p>
@@ -97,6 +115,7 @@
             </ul>
           </div>
         </div>
+      </div>
         <!-- <div class="col-md-1"></div> -->
       </div>
       <div class="row py-5">
@@ -110,21 +129,7 @@
         <!-- <div class="col-md-5"></div>
         <div class="col-md-1"></div> -->
       </div>
-      <div class="row py-5">
-        <ng-container *ngFor="let aboutLink of aboutLinks">
-          <div class="col-md-3">
-            <div class="about-box">
-            <div class="outer-sm">
-              <!-- <i [ngClass]="aboutLink.iconClass"></i> -->
-              <img [src]="getSVGImageUrl(aboutLink.iconClass)" alt="" height="40px" width="40px">
-              <!-- {{aboutLink.iconClass}} -->
-            </div>
-            <p>{{aboutLink.title}}</p>
-            <a href={{aboutLink.link}} target="_blank">{{aboutLink.linkTitle}}</a>
-          </div>
-          </div>
-        </ng-container>
-      </div>
+
   </div>
 </section>
 <section class="my-section py-5">
@@ -153,31 +158,33 @@
       </div>
     </div>
     <div class="row">
-      <form class="row g-3">
+      <form class="row g-3" [formGroup]="contactForm">
         <div class="col-md-2"></div>
         <div class="col-md-4">
-          <input type="email" class="form-control" id="inputEmail4">
+          <input type="text" class="form-control" placeholder="Name" formControlName="firstName">
         </div>
         <div class="col-md-4">
-          <input type="password" class="form-control" id="inputPassword4">
+          <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName">
         </div>
         <div class="col-md-2"></div>
         <div class="col-md-2"></div>
         <div class="col-md-4">
-          <input type="email" class="form-control" id="inputEmail4">
+          <input type="email" class="form-control" placeholder="Email" formControlName="email">
         </div>
         <div class="col-md-4">
-          <input type="password" class="form-control" id="inputPassword4">
+          <input type="text" class="form-control" placeholder="Number" formControlName="number">
         </div>
         <div class="col-md-2"></div>
         <div class="col-md-2"></div>
         <div class="col-8">
-          <textarea type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"></textarea>
+          <textarea type="text" class="form-control" id="inputAddress" placeholder="Message"></textarea>
         </div>
         <div class="col-md-2"></div>
         <div class="col-md-2"></div>
         <div class="col-8">
-          <button type="submit" class="btn btn-primary">Sign in</button>
+          <div class="img-container">
+            <button type="submit" class="btn hero-btn" (click)="submit()">Sign in</button>
+          </div>
         </div>
         <div class="col-md-2"></div>
       </form>

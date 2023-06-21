@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -8,7 +9,12 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class AppComponent {
   title = 'portfolio';
-  constructor(private _sanitizer: DomSanitizer) {}
+  contactForm!: FormGroup;
+  constructor(private _sanitizer: DomSanitizer, public fb: FormBuilder) {
+    this.validation()
+    console.log(this.contactForm);
+    
+  }
   aboutLinks = [
     {
       title: 'Email Address',
@@ -59,11 +65,28 @@ export class AppComponent {
     'Actively participated in code reviews and provided constructive feedback to improve overall code quality and maintainability.',
   ];
   getSVGImageUrl(svg: any) {
-    console.log(svg);
+    // console.log(svg);
 
     let base64string = btoa(svg);
     return this._sanitizer.bypassSecurityTrustResourceUrl(
       `data:image/svg+xml;base64,${base64string}`
     );
+  }
+
+  validation(){
+    this.contactForm = this.fb.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      email: ['', Validators.compose([Validators.email, Validators.required])],
+      number: ['', Validators.compose([Validators.minLength(10), Validators.required, Validators.maxLength(15), Validators.pattern("^[0-9]*$")])],
+    });
+  }
+  submit(){
+    if(this.contactForm.valid){
+      console.log(this.contactForm.value);
+    }else{
+      console.log("form is invalid");
+      
+    }
   }
 }
