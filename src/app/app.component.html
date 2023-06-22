@@ -41,7 +41,7 @@
       <div class="col-md-5">
         <div class="outer-circle">
           <div class="inner-circle">
-            <img src="assets/images/image.png" alt="">
+            <img src="https://avatars.githubusercontent.com/u/76512492?s=400&u=31ebc3d679351884aabe5816be4bf847c8081429&v=4" alt="">
           </div>
         </div>
       </div>
@@ -80,7 +80,7 @@
         <div class="col-md-2"></div>
       </div>
       <div class="row py-5">
-        <div class="row p-4 box-border">
+        <!-- <div class="row p-4 box-border"> -->
         <div class="col-md-6">
           <div class="about-content">
             <h3>Skills</h3>
@@ -92,17 +92,17 @@
         <div class="col-md-1"></div>
         <div class="col-md-5">
           <div class="img-container">
-          <img src="assets/images/skills1.gif" alt="skillsImg" width="100%">
+          <img src="assets/images/skills1.svg" alt="skillsImg" width="100%">
           </div>
         </div>
-      </div>
+      <!-- </div> -->
         <!-- <div class="col-md-1"></div> -->
       </div>
       <div class="row py-5">
-        <div class="row p-4 box-border">
+        <!-- <div class="row p-4 box-border"> -->
         <div class="col-md-5">
           <div class="img-container">
-            <img src="assets/images/experience1.gif" alt="experienceImg" width="100%">
+            <img src="assets/images/experience1.svg" alt="experienceImg" width="100%">
           </div>
         </div>
         <div class="col-md-1"></div>
@@ -115,21 +115,9 @@
             </ul>
           </div>
         </div>
-      </div>
+      <!-- </div> -->
         <!-- <div class="col-md-1"></div> -->
       </div>
-      <div class="row py-5">
-        <!-- <div class="col-md-1"></div> -->
-        <div class="col-md-12">
-          <div class="about-content">
-            <h3>Passion and Approach</h3>
-            <p>What truly drives me as a frontend developer is the ability to blend creativity with problem-solving. I am passionate about crafting seamless digital experiences that not only captivate users but also empower them to achieve their goals effortlessly. I take a user-centric approach, striving to understand their needs and preferences, and translating them into intuitive interfaces.</p>
-          </div>
-        </div>
-        <!-- <div class="col-md-5"></div>
-        <div class="col-md-1"></div> -->
-      </div>
-
   </div>
 </section>
 <section class="my-section py-5">
@@ -138,6 +126,34 @@
       <div class="section-heading">
         <h1>My Skills</h1>
       </div>
+    </div>
+    <div class="row py-5 bg-light">
+      <div class="col-md-2"></div>
+      <div class="col-md-1">
+        <img width="100%" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="">
+      </div>
+      <div class="col-md-1">
+        <img width="100%" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="">
+      </div>
+      <div class="col-md-1">
+        <img width="100%" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="">
+      </div>
+      <div class="col-md-1">
+        <img width="100%" src="https://camo.githubusercontent.com/fbfcb9e3dc648adc93bef37c718db16c52f617ad055a26de6dc3c21865c3321d/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f6769742d73636d2f6769742d73636d2d69636f6e2e737667" alt="">
+      </div>
+      <div class="col-md-1">
+        <img width="100%" src="https://camo.githubusercontent.com/ed93c2b000a76ceaad1503e7eb9356591b885227e82a36a005b9d3498b303ba5/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f6669676d612f6669676d612d69636f6e2e737667" alt="">
+      </div>
+      <div class="col-md-1">
+        <img width="100%" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="">
+      </div>
+      <div class="col-md-1">
+        <img width="100%" src="https://camo.githubusercontent.com/9eecc42439347332f256a326363924551042f5b96235f972982512199476611a/68747470733a2f2f616e67756c61722e696f2f6173736574732f696d616765732f6c6f676f732f616e67756c61722f616e67756c61722e737667" alt="">
+      </div>
+      <div class="col-md-1">
+        <img width="100%" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="">
+      </div>
+      <div class="col-md-2"></div>
     </div>
     </div>
 </section>
@@ -158,26 +174,35 @@
       </div>
     </div>
     <div class="row">
-      <form class="row g-3" [formGroup]="contactForm">
+      <form class="row g-5" [formGroup]="contactForm">
         <div class="col-md-2"></div>
         <div class="col-md-4">
           <input type="text" class="form-control" placeholder="Name" formControlName="firstName">
+          <p class="errormsg" *ngIf="(control['firstName'].hasError('required') && control['firstName']?.touched) || invalidForm ">*First name is required</p>
         </div>
         <div class="col-md-4">
           <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName">
+          <p class="errormsg" *ngIf="(control['lastName'].hasError('required') && control['lastName']?.touched) || invalidForm">*Last name is required</p>
         </div>
         <div class="col-md-2"></div>
         <div class="col-md-2"></div>
         <div class="col-md-4">
           <input type="email" class="form-control" placeholder="Email" formControlName="email">
+          <p class="errormsg" *ngIf="(control['email'].hasError('required') && control['email'].touched) || invalidForm ">*Email is required</p>
+          <p class="errormsg" *ngIf="control['email'].hasError('email') || invalidForm"> *Email is not valid</p>
         </div>
         <div class="col-md-4">
           <input type="text" class="form-control" placeholder="Number" formControlName="number">
+          <p class="errormsg" *ngIf="(control['number'].hasError('required') && control['number'].touched) || invalidForm">*Phone number is required</p>
+          <p class="errormsg" *ngIf="control['number'].hasError('pattern')">*Phone Number is not valid</p>
+          <p class="errormsg" *ngIf="control['number'].errors?.['minlength']">*Phone Number is not valid</p>
+          <p class="errormsg" *ngIf="control['number'].errors?.['maxlength']">*Phone Number is not valid</p>
         </div>
         <div class="col-md-2"></div>
         <div class="col-md-2"></div>
         <div class="col-8">
-          <textarea type="text" class="form-control" id="inputAddress" placeholder="Message"></textarea>
+          <textarea type="text" class="form-control" id="inputAddress" placeholder="Message" formControlName="message"></textarea>
+          <p class="errormsg" *ngIf="(control['message'].hasError('required') && control['message'].touched) || invalidForm">*Message is required</p>
         </div>
         <div class="col-md-2"></div>
         <div class="col-md-2"></div>

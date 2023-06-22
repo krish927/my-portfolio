@@ -154,7 +154,6 @@ input.form-control {
     border: none;
     border-bottom: 1px solid #27AE60;
     border-radius: 0;
-    opacity: 0.5;
     color: white;
 
 }
@@ -167,14 +166,12 @@ input.form-control:focus{
 }
 input.form-control::placeholder{
     color: #27AE60 !important;
-    opacity: 0.5;
 }
 textarea.form-control{
     background: transparent;
     border: none;
     border-bottom: 1px solid #27AE60;
     border-radius: 0;
-    opacity: 0.5;
     color: white;
 
 }
@@ -189,4 +186,9 @@ textarea.form-control:focus{
     border-radius: 0;
     outline: none;
     box-shadow: none;
+}
+.errormsg{
+    color: red;
+    font-size: 12px;
+    position: absolute;
 }

@@ -10,10 +10,12 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class AppComponent {
   title = 'portfolio';
   contactForm!: FormGroup;
+  control: any;
+  invalidForm = false;
   constructor(private _sanitizer: DomSanitizer, public fb: FormBuilder) {
     this.validation()
-    console.log(this.contactForm);
-    
+    console.log(this.control = this.contactForm.controls);
+    this.control = this.contactForm.controls;
   }
   aboutLinks = [
     {
@@ -79,6 +81,7 @@ export class AppComponent {
       lastName: ['', Validators.required],
       email: ['', Validators.compose([Validators.email, Validators.required])],
       number: ['', Validators.compose([Validators.minLength(10), Validators.required, Validators.maxLength(15), Validators.pattern("^[0-9]*$")])],
+      message: ['', Validators.required]
     });
   }
   submit(){
@@ -86,7 +89,10 @@ export class AppComponent {
       console.log(this.contactForm.value);
     }else{
       console.log("form is invalid");
-      
+      this.invalidForm = true;
+      setTimeout(() => {
+        this.invalidForm = false
+      }, 3000);      
     }
   }
 }
