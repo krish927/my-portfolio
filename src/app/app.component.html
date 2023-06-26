@@ -46,7 +46,7 @@
         </div>
       </div>
     </div>
-    <div class="row py-5">
+    <div class="row py-5 my-5">
       <ng-container *ngFor="let aboutLink of aboutLinks">
         <div class="col-md-3">
           <div class="about-box">
@@ -63,7 +63,7 @@
     </div>
   </div>
 </section>
-<section class="my-section py-5">
+<section class="my-section py-5 my-5">
   <div class="container">
     <div class="row py-3">
       <div class="section-heading">
@@ -79,7 +79,7 @@
       </div>
         <div class="col-md-2"></div>
       </div>
-      <div class="row py-5">
+      <div class="row py-5 my-5">
         <!-- <div class="row p-4 box-border"> -->
         <div class="col-md-6">
           <div class="about-content">
@@ -98,7 +98,7 @@
       <!-- </div> -->
         <!-- <div class="col-md-1"></div> -->
       </div>
-      <div class="row py-5">
+      <div class="row py-5 my-5">
         <!-- <div class="row p-4 box-border"> -->
         <div class="col-md-5">
           <div class="img-container">
@@ -120,14 +120,14 @@
       </div>
   </div>
 </section>
-<section class="my-section py-5">
+<section class="my-section py-5 my-5">
   <div class="container">
-    <div class="row">
+    <div class="row py-3">
       <div class="section-heading">
-        <h1>My Skills</h1>
+        <h1>Talk me about</h1>
       </div>
     </div>
-    <div class="row py-5 bg-light">
+    <div class="row py-5 my-5 skill-box">
       <div class="col-md-2"></div>
       <div class="col-md-1">
         <img width="100%" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="">
@@ -157,16 +157,39 @@
     </div>
     </div>
 </section>
-<section class="my-section py-5">
+<section class="my-section py-5 my-5">
   <div class="container">
-    <div class="row">
+    <div class="row py-3">
       <div class="section-heading">
         <h1>My Project</h1>
       </div>
     </div>
+    <div class="row py-5">
+      <ng-container *ngFor="let project of projects">
+        <div class="col-md-3 mb-4">
+          <a href="">
+          <div class="project-box p-4">
+            <div class="p_name">
+              <h4>{{project.name}}</h4>
+            </div>
+            <div class="p_img">
+              <img src={{project.image}} alt="">
+            </div>
+            <div class="p_description">
+              <p>{{project.description}}</p>
+            </div>
+          </div>
+        </a>
+        </div>
+      </ng-container>
+      <!-- <div class="col-md-3"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-3"></div>
+      <div class="col-md-1"></div> -->
+    </div>  
     </div>
 </section>
-<section class="my-section py-5">
+<section class="my-section py-5 my-5">
   <div class="container">
     <div class="row">
       <div class="section-heading">
@@ -208,7 +231,7 @@
         <div class="col-md-2"></div>
         <div class="col-8">
           <div class="img-container">
-            <button type="submit" class="btn hero-btn" (click)="submit()">Sign in</button>
+            <button type="submit" class="btn hero-btn" (click)="submit()">Submit</button>
           </div>
         </div>
         <div class="col-md-2"></div>
