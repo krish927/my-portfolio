@@ -78,7 +78,7 @@ export class AppComponent {
       name: 'Calculator',
       description: 'It is just a basic calculator',
       image: '',
-      url:''
+      url:'https://kk-calculator-0707.netlify.app/'
     },
     {
       name: 'To Do',
@@ -90,7 +90,7 @@ export class AppComponent {
       name: 'Dr Dev',
       description: 'Dr Dev is doctor based blog website where you can contact with doctor appoinntment',
       image: '',
-      url:''
+      url:'https://main--kk-drdev.netlify.app/'
     },
     {
       name: 'Quiz App',
@@ -102,13 +102,23 @@ export class AppComponent {
       name: 'News App',
       description: 'It is a simple news application which show news from different news agencies.',
       image: '',
-      url:''
+      url:'https://main--kk-news-app-0707.netlify.app/'
     },
 
   ]
+
+  skills_logo = [
+    "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg",
+    "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg",
+    "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
+    "https://camo.githubusercontent.com/fbfcb9e3dc648adc93bef37c718db16c52f617ad055a26de6dc3c21865c3321d/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f6769742d73636d2f6769742d73636d2d69636f6e2e737667",
+    "https://camo.githubusercontent.com/ed93c2b000a76ceaad1503e7eb9356591b885227e82a36a005b9d3498b303ba5/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f6669676d612f6669676d612d69636f6e2e737667",
+    "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg",
+    "https://camo.githubusercontent.com/9eecc42439347332f256a326363924551042f5b96235f972982512199476611a/68747470733a2f2f616e67756c61722e696f2f6173736574732f696d616765732f6c6f676f732f616e67756c61722f616e67756c61722e737667",
+    "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
+  ]
   getSVGImageUrl(svg: any) {
     // console.log(svg);
-
     let base64string = btoa(svg);
     return this._sanitizer.bypassSecurityTrustResourceUrl(
       `data:image/svg+xml;base64,${base64string}`
