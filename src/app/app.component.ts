@@ -90,7 +90,7 @@ export class AppComponent {
       name: 'Dr Dev',
       description: 'Dr Dev is doctor based blog website where you can contact with doctor appoinntment',
       image: '',
-      url:''
+      url:'https://main--kk-drdev.netlify.app/'
     },
     {
       name: 'Quiz App',
@@ -102,7 +102,7 @@ export class AppComponent {
       name: 'News App',
       description: 'It is a simple news application which show news from different news agencies.',
       image: '',
-      url:''
+      url:'https://main--kk-news-app-0707.netlify.app/'
     },
 
   ]
