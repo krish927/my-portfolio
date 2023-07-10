@@ -38,7 +38,7 @@
         </div>
       </div>
       <!-- <div class="col-md-1"></div> -->
-      <div class="col-md-5">
+      <div class="col-md-5 margin-fix">
         <div class="outer-circle">
           <div class="inner-circle">
             <img src="https://avatars.githubusercontent.com/u/76512492?s=400&u=31ebc3d679351884aabe5816be4bf847c8081429&v=4" alt="">
@@ -47,8 +47,8 @@
       </div>
     </div>
     <div class="row py-5 my-5">
-      <ng-container *ngFor="let aboutLink of aboutLinks">
-        <div class="col-md-3">
+      <ng-container *ngFor="let aboutLink of aboutLinks; let i = index">
+        <div class="col-md-3" [ngClass]="i == 0 ? '' : 'margin-fix'">
           <div class="about-box">
           <div class="outer-sm">
             <!-- <i [ngClass]="aboutLink.iconClass"></i> -->
@@ -81,7 +81,7 @@
       </div>
       <div class="row py-5 my-5">
         <!-- <div class="row p-4 box-border"> -->
-        <div class="col-md-6">
+        <div class="col-md-6 margin-fix">
           <div class="about-content">
             <h3>Skills</h3>
             <ul *ngFor="let skill of skills">
@@ -90,7 +90,7 @@
           </div>
         </div>
         <div class="col-md-1"></div>
-        <div class="col-md-5">
+        <div class="col-md-5 order-first">
           <div class="img-container">
           <img src="assets/images/skills1.svg" alt="skillsImg" width="100%">
           </div>
@@ -106,7 +106,7 @@
           </div>
         </div>
         <div class="col-md-1"></div>
-        <div class="col-md-6">
+        <div class="col-md-6 margin-fix">
           <div class="about-content">
             <h3>Experience</h3>
             <p>I have worked on several frontend development projects, collaborating with cross-functional teams to bring digital concepts to life. Here are some highlights of my experience:</p>
@@ -129,30 +129,11 @@
     </div>
     <div class="row py-5 my-5 skill-box">
       <div class="col-md-2"></div>
-      <div class="col-md-1">
-        <img width="100%" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="">
-      </div>
-      <div class="col-md-1">
-        <img width="100%" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="">
-      </div>
-      <div class="col-md-1">
-        <img width="100%" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="">
-      </div>
-      <div class="col-md-1">
-        <img width="100%" src="https://camo.githubusercontent.com/fbfcb9e3dc648adc93bef37c718db16c52f617ad055a26de6dc3c21865c3321d/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f6769742d73636d2f6769742d73636d2d69636f6e2e737667" alt="">
-      </div>
-      <div class="col-md-1">
-        <img width="100%" src="https://camo.githubusercontent.com/ed93c2b000a76ceaad1503e7eb9356591b885227e82a36a005b9d3498b303ba5/68747470733a2f2f7777772e766563746f726c6f676f2e7a6f6e652f6c6f676f732f6669676d612f6669676d612d69636f6e2e737667" alt="">
-      </div>
-      <div class="col-md-1">
-        <img width="100%" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="">
-      </div>
-      <div class="col-md-1">
-        <img width="100%" src="https://camo.githubusercontent.com/9eecc42439347332f256a326363924551042f5b96235f972982512199476611a/68747470733a2f2f616e67756c61722e696f2f6173736574732f696d616765732f6c6f676f732f616e67756c61722f616e67756c61722e737667" alt="">
-      </div>
-      <div class="col-md-1">
-        <img width="100%" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="">
-      </div>
+      <ng-container *ngFor="let skill_icon of skills_logo; let i = index">
+        <div class="col-md-1 col-sm-3 col-3" [ngClass]="i > 3 ? 'margin-fix' : '' ">
+          <img width="100%" src={{skill_icon}} alt="">
+        </div>
+      </ng-container>
       <div class="col-md-2"></div>
     </div>
     </div>
@@ -165,8 +146,8 @@
       </div>
     </div>
     <div class="row py-5">
-      <ng-container *ngFor="let project of projects">
-        <div class="col-md-3 mb-4">
+      <ng-container *ngFor="let project of projects; let i = index">
+        <div class="col-md-3 mb-4" [ngClass]="'margin-fix'">
           <a href="">
           <div class="project-box p-4">
             <div class="p_name">

@@ -202,3 +202,18 @@ textarea.form-control:focus{
     border: 1px solid #27AE60;
     border-radius: 10px;
 }
+.p_name h4{
+    color: #27AE60;
+}
+.p_description p{
+    color: #FFFFFF;
+}
+@media screen and (max-width: 768px) {
+    .margin-fix{
+        margin-top: 3rem;
+        padding-top: 3rem;
+    }
+    // .skill-box img{
+    //     width: 35%;
+    // }
+}
