@@ -1,0 +1,62 @@
+<section class="main">
+    <div class="container">
+      <div class="row py-5">
+        <div class="col-md-7">
+          <div class="hero-content">
+          <h1>Hi, I am <br>Krishan Kant Gautam</h1>
+            <p>Frontend Developer</p>
+            <div class="btn-area d-flex mt-5">
+              <button class="btn hero-btn">
+                <a href="assets/My Resume.pdf" download>Download CV</a>
+              </button>
+              <button class="btn hero-btn hero-btn1" routerLink="/about">Learn More</button>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-md-1"></div> -->
+        <div class="col-md-5 margin-fix">
+          <div class="outer-circle">
+            <div class="inner-circle">
+              <img src="https://avatars.githubusercontent.com/u/76512492?s=400&u=31ebc3d679351884aabe5816be4bf847c8081429&v=4" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row py-5 my-5">
+        <ng-container *ngFor="let aboutLink of aboutLinks; let i = index">
+          <div class="col-md-3" [ngClass]="i == 0 ? '' : 'margin-fix'">
+            <div class="about-box">
+            <div class="outer-sm">
+              <!-- <i [ngClass]="aboutLink.iconClass"></i> -->
+              <img [src]="getSVGImageUrl(aboutLink.iconClass)" alt="" height="40px" width="40px">
+              <!-- {{aboutLink.iconClass}} -->
+            </div>
+            <p>{{aboutLink.title}}</p>
+            <a href={{aboutLink.link}} target="_blank">{{aboutLink.linkTitle}}</a>
+          </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </section>
+  <app-about></app-about>
+  <section class="my-section py-5 my-5">
+    <div class="container">
+      <div class="row py-3">
+        <div class="section-heading">
+          <h1>Talk me about</h1>
+        </div>
+      </div>
+      <div class="row py-5 my-5 skill-box">
+        <div class="col-md-2"></div>
+        <ng-container *ngFor="let skill_icon of skills_logo; let i = index">
+          <div class="col-md-1 col-sm-3 col-3" [ngClass]="i > 3 ? 'margin-fix' : '' ">
+            <img width="100%" src={{skill_icon}} alt="">
+          </div>
+        </ng-container>
+        <div class="col-md-2"></div>
+      </div>
+      </div>
+  </section>
+  <app-projects></app-projects>
+  <app-contact-us></app-contact-us>

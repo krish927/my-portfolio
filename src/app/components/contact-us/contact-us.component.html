@@ -1,0 +1,50 @@
+<section class="my-section py-5 my-5">
+    <div class="container">
+      <div class="row">
+        <div class="section-heading">
+          <h1>Get in touch</h1>
+        </div>
+      </div>
+      <div class="row">
+        <form class="row g-5" [formGroup]="contactForm">
+          <div class="col-md-2"></div>
+          <div class="col-md-4">
+            <input type="text" class="form-control" placeholder="Name" formControlName="firstName">
+            <p class="errormsg" *ngIf="(control['firstName'].hasError('required') && control['firstName']?.touched) || invalidForm ">*First name is required</p>
+          </div>
+          <div class="col-md-4">
+            <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName">
+            <p class="errormsg" *ngIf="(control['lastName'].hasError('required') && control['lastName']?.touched) || invalidForm">*Last name is required</p>
+          </div>
+          <div class="col-md-2"></div>
+          <div class="col-md-2"></div>
+          <div class="col-md-4">
+            <input type="email" class="form-control" placeholder="Email" formControlName="email">
+            <p class="errormsg" *ngIf="(control['email'].hasError('required') && control['email'].touched) || invalidForm ">*Email is required</p>
+            <p class="errormsg" *ngIf="control['email'].hasError('email') || invalidForm"> *Email is not valid</p>
+          </div>
+          <div class="col-md-4">
+            <input type="text" class="form-control" placeholder="Number" formControlName="number">
+            <p class="errormsg" *ngIf="(control['number'].hasError('required') && control['number'].touched) || invalidForm">*Phone number is required</p>
+            <p class="errormsg" *ngIf="control['number'].hasError('pattern')">*Phone Number is not valid</p>
+            <p class="errormsg" *ngIf="control['number'].errors?.['minlength']">*Phone Number is not valid</p>
+            <p class="errormsg" *ngIf="control['number'].errors?.['maxlength']">*Phone Number is not valid</p>
+          </div>
+          <div class="col-md-2"></div>
+          <div class="col-md-2"></div>
+          <div class="col-8">
+            <textarea type="text" class="form-control" id="inputAddress" placeholder="Message" formControlName="message"></textarea>
+            <p class="errormsg" *ngIf="(control['message'].hasError('required') && control['message'].touched) || invalidForm">*Message is required</p>
+          </div>
+          <div class="col-md-2"></div>
+          <div class="col-md-2"></div>
+          <div class="col-8">
+            <div class="img-container">
+              <button type="submit" class="btn hero-btn" (click)="submit()">Submit</button>
+            </div>
+          </div>
+          <div class="col-md-2"></div>
+        </form>
+      </div>
+      </div>
+  </section>

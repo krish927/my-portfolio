@@ -1,0 +1,57 @@
+<section class="my-section py-5 my-5">
+    <div class="container">
+      <div class="row py-3">
+        <div class="section-heading">
+          <h1>About</h1>
+        </div>
+      </div>
+        <div class="row py-5">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+          <div class="about-text">
+            <p>Hello, I'm Krishan Kant Gautam, a frontend developer with a strong enthusiasm for creating engaging and intuitive digital experiences. With a solid foundation in web development and a keen eye for design, I strive to deliver exceptional user interfaces that seamlessly blend aesthetics and functionality.</p>
+          </div>
+        </div>
+          <div class="col-md-2"></div>
+        </div>
+        <div class="row py-5 my-5">
+          <!-- <div class="row p-4 box-border"> -->
+          <div class="col-md-6 margin-fix">
+            <div class="about-content">
+              <h3>Skills</h3>
+              <ul *ngFor="let skill of skills">
+                <li>{{skill}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-5 order-first">
+            <div class="img-container">
+            <img src="assets/images/skills1.svg" alt="skillsImg" width="100%">
+            </div>
+          </div>
+        <!-- </div> -->
+          <!-- <div class="col-md-1"></div> -->
+        </div>
+        <div class="row py-5 my-5">
+          <!-- <div class="row p-4 box-border"> -->
+          <div class="col-md-5">
+            <div class="img-container">
+              <img src="assets/images/experience1.svg" alt="experienceImg" width="100%">
+            </div>
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-6 margin-fix">
+            <div class="about-content">
+              <h3>Experience</h3>
+              <p>I have worked on several frontend development projects, collaborating with cross-functional teams to bring digital concepts to life. Here are some highlights of my experience:</p>
+              <ul *ngFor="let experience of experiences">
+                <li>{{experience}}</li>
+              </ul>
+            </div>
+          </div>
+        <!-- </div> -->
+          <!-- <div class="col-md-1"></div> -->
+        </div>
+    </div>
+  </section>

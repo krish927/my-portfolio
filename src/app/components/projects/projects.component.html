@@ -1,0 +1,28 @@
+<section class="my-section py-5 my-5">
+    <div class="container">
+      <div class="row py-3">
+        <div class="section-heading">
+          <h1>My Project</h1>
+        </div>
+      </div>
+      <div class="row py-5">
+        <ng-container *ngFor="let project of projects; let i = index">
+          <div class="col-md-3 mb-4" [ngClass]="'margin-fix'">
+            <a href={{project.url}}  target="_blank">
+            <div class="project-box p-4">
+              <div class="p_name">
+                <h4>{{project.name}}</h4>
+              </div>
+              <div class="p_img">
+                <img src={{project.image}} alt="">
+              </div>
+              <div class="p_description">
+                <p>{{project.description}}</p>
+              </div>
+            </div>
+          </a>
+          </div>
+        </ng-container>
+      </div>  
+      </div>
+  </section>
